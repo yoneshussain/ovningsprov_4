@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Övningsprov 4 – Praktiskt prov</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">U04 · JavaScript</p>
+        <h1>Övningsprov 4</h1>
+        <p>Praktiskt prov · 10 frågor · 30 poäng</p>
+      </header>
+      <nav>
+        <a class="active" href="index.html">Praktiskt prov</a
+        ><a href="quiz.html">Quizträning</a>
+      </nav>
+      <section class="panel selector">
+        <label for="questionSelect">Välj fråga</label>
+        <select id="questionSelect">
+          <option value="1">Fråga 1 – Funktioner och villkor (3p)</option>
+          <!-- <option value="2">Fråga 2 – map, filter och find (3p)</option> -->
+          <!-- <option value="3">Fråga 3 – reduce (3p)</option> -->
+          <!-- <option value="4">Fråga 4 – Spread, rest och immutability (3p)</option> -->
+          <!-- <option value="5">Fråga 5 – DOM och rendering (3p)</option> -->
+          <!-- <option value="6">Fråga 6 – DOM och event listeners (3p)</option> -->
+          <!-- <option value="7">Fråga 7 – Fetch och async/await (4p)</option> -->
+          <!-- <option value="8">Fråga 8 – Promise och async/await (2p)</option> -->
+          <!-- <option value="9">Fråga 9 – Klasser och getters (3p)</option> -->
+          <!-- <option value="10">Fråga 10 – ES-moduler (3p)</option> -->
+        </select>
+        <button id="loadButton" type="button">Ladda fråga</button>
+      </section>
+      <section class="panel">
+        <h2>Testyta</h2>
+        <p class="hint">
+          Fråga 5–7 använder ytan nedan. Övriga frågor testas främst i Console.
+        </p>
+        <div id="status" role="status"></div>
+        <ul id="products"></ul>
+        <div id="actions"></div>
+        <p id="actionResult"></p>
+        <div id="posts"></div>
+      </section>
+      <section class="panel">
+        <h2>Information</h2>
+        <p id="output" aria-live="polite">
+          Välj en fråga och klicka på ”Ladda fråga”.
+        </p>
+        <p class="hint">
+          Öppna webbläsarens utvecklarverktyg → Console för console.log(). Kör
+          via VS Code Live Server.
+        </p>
+      </section>
+      <footer>
+        <p>
+          Ändra koden i respektive questionN.js och ladda om frågan med knappen.
+        </p>
+      </footer>
+    </main>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
