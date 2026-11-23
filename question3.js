@@ -7,8 +7,8 @@ const order = [
   { name: "Pen", price: 12, quantity: 5 },
   { name: "Backpack", price: 450, quantity: 1 }
 ];
-const calculateOrderTotal = (order) => { /* Skriv din kod här */ };
-const calculateTotalQuantity = (order) => { /* Skriv din kod här */ };
+const calculateOrderTotal = (order) => { return order.reduce((sum, product) => sum + (product.price * product.quantity), 0) };
+const calculateTotalQuantity = (order) => { return order.reduce((sum, product) => sum + product.quantity, 0) };
 console.log(calculateOrderTotal(order)); // 615
 console.log(calculateTotalQuantity(order)); // 9
 console.log(calculateOrderTotal([])); // 0

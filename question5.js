@@ -7,6 +7,27 @@
 // 5. Lägg till alla li-element i ul:en.
 const products = [
   // Lägg till minst tre produktobjekt
+  { name: "Samoon", price: 40 },
+  { name: "Teemen", price: 100 },
+  { name: "Mkhellel", price: 20 },
+  { name: "Ma3oon", price: 190 }
 ];
 const container = document.querySelector("#products");
 // Skriv din kod här
+const listEl = products.map((product) => {
+  const li = document.createElement("li")
+  const button = document.createElement("button")
+  li.textContent = `${product.name} (${product.price})`
+  button.textContent = "Markera"
+
+  button.addEventListener("click", () => {
+    li.classList.add("selected")
+  })
+
+  li.appendChild(button)
+  return li
+})
+
+listEl.forEach((li) => {
+  container.appendChild(li)
+})

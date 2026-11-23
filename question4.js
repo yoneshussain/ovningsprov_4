@@ -5,8 +5,8 @@
 //    Använd rest-parametern och spread.
 // 3. Kontrollera att originalobjektet är oförändrat.
 const user = { name: "Sam", city: "Uppsala", hobbies: ["Gaming", "Running"] };
-const updateUserCity = (user, newCity) => { /* Skriv din kod här */ };
-const addHobbies = (user, ...newHobbies) => { /* Skriv din kod här */ };
+const updateUserCity = (user, newCity) => { return { ...user, city: newCity } };
+const addHobbies = (user, ...newHobbies) => { return { ...user, hobbies: [ ...user.hobbies, ...newHobbies ] } };
 console.log(updateUserCity(user, "Stockholm"));
 console.log(addHobbies(user, "Reading", "Cooking"));
 console.log("Original:", user);

@@ -6,9 +6,9 @@ const products = [
   { id: 1, name: "Keyboard", stock: 4 }, { id: 2, name: "Mouse", stock: 0 },
   { id: 3, name: "Monitor", stock: 7 }, { id: 4, name: "Headphones", stock: 2 }
 ];
-const getAvailableProducts = (products) => { /* Skriv din kod här */ };
-const getProductById = (products, id) => { /* Skriv din kod här */ };
-const getProductNames = (products) => { /* Skriv din kod här */ };
+const getAvailableProducts = (products) => { return products.filter((product) => product.stock > 0) };
+const getProductById = (products, id) => { return products.find((product) => product.id === id) };
+const getProductNames = (products) => { return products.map((product) => product.name) };
 console.log(getAvailableProducts(products));
 console.log(getProductById(products, 3));
 console.log(getProductNames(products));
