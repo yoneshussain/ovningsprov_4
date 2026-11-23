@@ -5,8 +5,8 @@
 // 3. Varje li ska visa namn, pris och en knapp "Markera".
 // 4. Klick på knappen ska lägga klassen "selected" på just det li-elementet.
 // 5. Lägg till alla li-element i ul:en.
-const products=[
+const products = [
   // Lägg till minst tre produktobjekt
 ];
-const container=document.querySelector("#products");
+const container = document.querySelector("#products");
 // Skriv din kod här

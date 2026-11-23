@@ -198,31 +198,31 @@ const questions = [
     "e": "OOP kan passa när objekt har tydligt tillstånd och beteenden, till exempel produkter eller användare."
   }
 ];
-const form=document.querySelector("#quizForm");
-const questionContainer=document.querySelector("#quizQuestions");
-const result=document.querySelector("#quizResult");
-function renderQuiz(){
+const form = document.querySelector("#quizForm");
+const questionContainer = document.querySelector("#quizQuestions");
+const result = document.querySelector("#quizResult");
+function renderQuiz() {
   questionContainer.replaceChildren();
-  questions.forEach((question,index)=>{
-    const fieldset=document.createElement("fieldset"); fieldset.className="question";
-    const heading=document.createElement("h3"); heading.textContent=`${index+1}. ${question.q}`; fieldset.append(heading);
-    question.a.forEach((answer,answerIndex)=>{
-      const label=document.createElement("label"); label.className="answer";
-      const input=document.createElement("input"); input.type="radio"; input.name=`q${index}`; input.value=String(answerIndex); input.required=true;
-      label.append(input,document.createTextNode(answer)); fieldset.append(label);
+  questions.forEach((question, index) => {
+    const fieldset = document.createElement("fieldset"); fieldset.className = "question";
+    const heading = document.createElement("h3"); heading.textContent = `${index + 1}. ${question.q}`; fieldset.append(heading);
+    question.a.forEach((answer, answerIndex) => {
+      const label = document.createElement("label"); label.className = "answer";
+      const input = document.createElement("input"); input.type = "radio"; input.name = `q${index}`; input.value = String(answerIndex); input.required = true;
+      label.append(input, document.createTextNode(answer)); fieldset.append(label);
     });
     questionContainer.append(fieldset);
   });
 }
-form.addEventListener("submit",event=>{
-  event.preventDefault(); let score=0; const feedback=[];
-  questions.forEach((question,index)=>{
-    const selected=form.querySelector(`input[name="q${index}"]:checked`);
-    const correct=selected && Number(selected.value)===question.c; if(correct) score++;
-    feedback.push(`<section class="${correct?"correct":"incorrect"}"><strong>${index+1}. ${correct?"Rätt":"Inte rätt"}</strong><p class="explanation">${question.e}</p></section>`);
+form.addEventListener("submit", event => {
+  event.preventDefault(); let score = 0; const feedback = [];
+  questions.forEach((question, index) => {
+    const selected = form.querySelector(`input[name="q${index}"]:checked`);
+    const correct = selected && Number(selected.value) === question.c; if (correct) score++;
+    feedback.push(`<section class="${correct ? "correct" : "incorrect"}"><strong>${index + 1}. ${correct ? "Rätt" : "Inte rätt"}</strong><p class="explanation">${question.e}</p></section>`);
   });
-  result.hidden=false; result.innerHTML=`<h2>Resultat: ${score} / ${questions.length}</h2><p>${Math.round(score/questions.length*100)} % rätt.</p>${feedback.join("")}`;
-  result.scrollIntoView({behavior:"smooth",block:"start"});
+  result.hidden = false; result.innerHTML = `<h2>Resultat: ${score} / ${questions.length}</h2><p>${Math.round(score / questions.length * 100)} % rätt.</p>${feedback.join("")}`;
+  result.scrollIntoView({ behavior: "smooth", block: "start" });
 });
-document.querySelector("#resetQuiz").addEventListener("click",()=>{form.reset();result.hidden=true;result.replaceChildren();window.scrollTo({top:0,behavior:"smooth"});});
+document.querySelector("#resetQuiz").addEventListener("click", () => { form.reset(); result.hidden = true; result.replaceChildren(); window.scrollTo({ top: 0, behavior: "smooth" }); });
 renderQuiz();

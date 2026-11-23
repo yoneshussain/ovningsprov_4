@@ -4,9 +4,9 @@
 // 2. addHobbies(user,...newHobbies): returnera nytt objekt med gamla + nya hobbies.
 //    Använd rest-parametern och spread.
 // 3. Kontrollera att originalobjektet är oförändrat.
-const user={name:"Sam",city:"Uppsala",hobbies:["Gaming","Running"]};
-const updateUserCity=(user,newCity)=>{ /* Skriv din kod här */ };
-const addHobbies=(user,...newHobbies)=>{ /* Skriv din kod här */ };
-console.log(updateUserCity(user,"Stockholm"));
-console.log(addHobbies(user,"Reading","Cooking"));
-console.log("Original:",user);
+const user = { name: "Sam", city: "Uppsala", hobbies: ["Gaming", "Running"] };
+const updateUserCity = (user, newCity) => { /* Skriv din kod här */ };
+const addHobbies = (user, ...newHobbies) => { /* Skriv din kod här */ };
+console.log(updateUserCity(user, "Stockholm"));
+console.log(addHobbies(user, "Reading", "Cooking"));
+console.log("Original:", user);
