@@ -9,5 +9,37 @@
 const postsContainer = document.querySelector("#posts");
 const statusElement = document.querySelector("#status");
 const url = "https://jsonplaceholder.typicode.com/posts";
-const getPosts = async () => { /* Skriv din kod här */ };
+const getPosts = async () => {
+    const response = await fetch(url)
+
+    if (!response.ok) {
+        throw new Error("Something went wrong!")
+    }
+
+    const data = await response.json()
+    return data
+};
+
 // Skriv kod som anropar getPosts(), filtrerar och renderar.
+try {
+    const data = await getPosts()
+    const filteredData = data.filter((post) => post.userId === 1)
+
+    filteredData.forEach((post) => {
+        const h3 = document.createElement("h3")
+        const p = document.createElement("p")
+
+        h3.textContent = post.title
+        p.textContent = post.body
+
+        postsContainer.append(h3, p)
+    })
+
+} catch (error) {
+    console.log("Something went wrong:", error)
+
+    const err = document.createElement("p")
+    err.textContent = error
+
+    statusElement.appendChild(err)
+}

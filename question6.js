@@ -7,3 +7,14 @@ const actions = document.querySelector("#actions");
 const actionResult = document.querySelector("#actionResult");
 const filters = ["Visa alla", "I lager", "Slut i lager"];
 // Skriv din kod här
+
+for (let i = 0; i < filters.length; i++) {
+    const button = document.createElement("button")
+    button.textContent = filters[i]
+
+    button.addEventListener("click", () => {
+        actionResult.textContent = filters[i]
+    })
+
+    actions.appendChild(button)
+}

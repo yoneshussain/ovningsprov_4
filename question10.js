@@ -6,6 +6,14 @@
 // 4. Skriv ut resultatet i Console.
 // Skriv själv import-raden och testerna här.
 
+
 // Importera funktionerna från utils.js
+import { calculateDiscount, formatPrice } from "./utils.js";
+
 
 // Skriv dina tester här
+const discount = calculateDiscount(400, 25)
+
+const price = formatPrice(discount)
+
+console.log(price)
