@@ -20,7 +20,8 @@ class Product {
 
   changeStock(amount) {
     if (amount > 0) {
-      this.stock + amount
+      const updatedStock = this.stock + amount
+      this.stock = updatedStock
       return this.stock
     } else {
       return "Amount needs to be bigger than 0!"
@@ -34,5 +35,5 @@ const handskar = new Product("Handskar", 200, 2)
 const mossa = new Product("Mössa", 900, 100)
 const dachri = new Product("Dachri", 98873, 23)
 console.log(skor.inventoryValue)
-console.log(skor.changeStock(2))
+console.log(skor.changeStock(3))
 console.log(skor)
