@@ -11,8 +11,7 @@ export function formatPrice(price) {
 }
 
 export function calculateDiscount(price, discountPercent) {
-    const percentage = `0.${discountPercent}`
-    const discount = price * percentage
+    const discount = price * (discountPercent / 100)
     const finalPrice = price - discount
 
     return finalPrice

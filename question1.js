@@ -5,11 +5,8 @@
 // Test: (500,20,false) -> 400 och (500,20,true) -> 375.
 const calculateFinalPrice = (price, discount, isMember) => {
   // Skriv din kod här
-  let fullDiscount = `0.${discount + 5}`
-  if (!isMember) {
-    fullDiscount = `0.${discount}`
-  }
-  const deduction = price * fullDiscount
+  const totalDiscount = discount + (isMember ? 5 : 0)
+  const deduction = price * (totalDiscount / 100)
   return price - deduction
 };
 console.log(calculateFinalPrice(500, 20, false));

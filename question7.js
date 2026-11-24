@@ -23,7 +23,9 @@ const getPosts = async () => {
 // Skriv kod som anropar getPosts(), filtrerar och renderar.
 try {
     const data = await getPosts()
-    const filteredData = data.filter((post) => post.userId === 1)
+    const filteredData = data
+        .filter((post) => post.userId === 1)
+        .slice(0, 5)
 
     filteredData.forEach((post) => {
         const h3 = document.createElement("h3")
